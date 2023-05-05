@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.demo.controllers.DashboardController">
+   <children>
+      <HBox layoutX="14.0" layoutY="244.0" prefHeight="116.0" prefWidth="224.0">
+         <children>
+            <VBox prefHeight="115.0" prefWidth="150.0">
+               <children>
+                  <TextField fx:id="txtName" opacity="0.91" promptText="Name">
+                     <VBox.margin>
+                        <Insets bottom="3.0" top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtAge" opacity="0.91" promptText="Age">
+                     <VBox.margin>
+                        <Insets bottom="3.0" top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="txtMaritalStatus" opacity="0.91" promptText="Marital Status">
+                     <VBox.margin>
+                        <Insets bottom="3.0" top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+                  <TextField fx:id="residenceTime" opacity="0.91" promptText="Period of Residence">
+                     <VBox.margin>
+                        <Insets bottom="3.0" top="3.0" />
+                     </VBox.margin>
+                  </TextField>
+               </children>
+            </VBox>
+            <ImageView fx:id="userPng" fitHeight="150.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../images/person.png" />
+               </image>
+            </ImageView>
+         </children>
+      </HBox>
+      <HBox fx:id="portalComplaint" layoutX="258.0" layoutY="258.0" prefHeight="100.0" prefWidth="148.0" style="-fx-border-color: black;">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File a Complaint" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+         <padding>
+            <Insets right="12.0" />
+         </padding>
+      </HBox>
+      <HBox fx:id="portalForum" layoutX="422.0" layoutY="258.0" prefHeight="100.0" prefWidth="196.0" style="-fx-border-color: black;">
+         <padding>
+            <Insets left="5.0" />
+         </padding>
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Public Discussion Forum" textAlignment="CENTER">
+               <font>
+                  <Font size="20.0" />
+               </font>
+            </Text>
+         </children>
+      </HBox>
+      <HBox fx:id="ucMap" layoutX="12.0" layoutY="80.0" prefHeight="150.0" prefWidth="474.0" />
+      <ImageView fitHeight="76.0" fitWidth="82.0" layoutX="519.0" pickOnBounds="true">
+         <image>
+            <Image url="@../images/local-gov.png" />
+         </image>
+      </ImageView>
+      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+      <Text layoutX="115.0" layoutY="57.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Union Council" wrappingWidth="102.36328125" />
+   </children>
+   <effect>
+      <ColorAdjust hue="0.11" />
+   </effect>
+</AnchorPane>
