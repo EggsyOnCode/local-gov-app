@@ -1,8 +1,11 @@
 package com.example.demo;
 
+import com.example.demo.forum.ClientController;
+import com.example.demo.forum.MainClient;
+import com.example.demo.forum.MainServer;
+import com.example.demo.models.Model;
+import com.sun.tools.javac.Main;
 import javafx.application.Application;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.stage.Stage;
 
 import java.io.IOException;
@@ -10,13 +13,14 @@ import java.io.IOException;
 public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
-        FXMLLoader fxmlLoader = new FXMLLoader(App.class.getResource("/fxml/Dashboard.fxml"));
-        Scene scene = new Scene(fxmlLoader.load(), 650, 400);
-        stage.setScene(scene);
-        stage.show();
+//        ClientController clientUI = new ClientController(stage);
+        Model.getInstance().getViewFactory().getLoginPage();
+//        MainServer server = new MainServer();
+//        server.start(stage);
+//        MainClient client = new MainClient();
+//        client.start(stage);
+
     }
 
-    public static void main(String[] args) {
-        launch(args);
-    }
+
 }
