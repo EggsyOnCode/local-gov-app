@@ -10,9 +10,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" fx:controller="com.example.demo.controllers.SignUpController" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+<BorderPane fx:controller="com.example.demo.controllers.SignUpController" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" >
    <left>
-      <AnchorPane prefHeight="400.0" prefWidth="269.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER">
+      <AnchorPane prefHeight="400.0" prefWidth="269.0" style="-fx-background-color: green;" BorderPane.alignment="CENTER" >
          <children>
             <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="60.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -37,7 +37,7 @@
             <TextField fx:id="signCNIC" layoutX="90.0" layoutY="140.0" promptText="CNIC" />
             <TextField fx:id="signID" layoutX="16.0" layoutY="299.0" promptText="username/id" />
             <PasswordField fx:id="signPswd" layoutX="176.0" layoutY="299.0" promptText="pswd" />
-            <Button fx:id="btnSignUp" layoutX="140.0" layoutY="348.0" mnemonicParsing="false" text="Sign Up!" />
+            <Button fx:id="btnSign" layoutX="139.0" layoutY="349.0" mnemonicParsing="false" text="Sign Up" />
          </children>
       </AnchorPane>
    </center>

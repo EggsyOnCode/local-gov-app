@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.geometry.Insets?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.Button?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -17,26 +17,27 @@
          <children>
             <VBox prefHeight="115.0" prefWidth="150.0">
                <children>
-                  <TextField fx:id="txtName" opacity="0.91" promptText="Name">
+                  <Text fx:id="txtName" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.1366958618164">
                      <VBox.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="6.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="txtAge" opacity="0.91" promptText="Age">
+                  </Text>
+                  <Text fx:id="txtProfession" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <VBox.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="6.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="txtMaritalStatus" opacity="0.91" promptText="Marital Status">
+                  </Text>
+                  <Text fx:id="txtAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <VBox.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="6.0" />
                      </VBox.margin>
-                  </TextField>
-                  <TextField fx:id="residenceTime" opacity="0.91" promptText="Period of Residence">
+                  </Text>
+                  <Text fx:id="txtPhone" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
                      <VBox.margin>
-                        <Insets bottom="3.0" top="3.0" />
+                        <Insets bottom="6.0" />
                      </VBox.margin>
-                  </TextField>
+                  </Text>
+                  <Text fx:id="txtGender" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
                </children>
             </VBox>
             <ImageView fx:id="userPng" fitHeight="150.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
@@ -77,7 +78,9 @@
          </image>
       </ImageView>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
-      <Text layoutX="115.0" layoutY="57.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Your Union Council" wrappingWidth="102.36328125" />
+      <Text fx:id="UCname" layoutX="115.0" layoutY="57.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.36328125" />
+      <Button fx:id="btnPersonalInfo" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" text="Add Personal Info" />
+      <Button layoutX="154.0" layoutY="360.0" mnemonicParsing="false" text="View Personal Info" />
    </children>
    <effect>
       <ColorAdjust hue="0.11" />
