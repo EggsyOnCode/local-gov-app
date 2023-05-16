@@ -22,29 +22,25 @@
                         <Insets bottom="6.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fx:id="txtProfession" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <Text fx:id="txtProfession" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.13672637939453">
                      <VBox.margin>
                         <Insets bottom="6.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fx:id="txtAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <Text fx:id="txtAddress" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="150.9367446899414">
                      <VBox.margin>
                         <Insets bottom="6.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fx:id="txtPhone" strokeType="OUTSIDE" strokeWidth="0.0" text="Text">
+                  <Text fx:id="txtPhone" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="151.73670196533203">
                      <VBox.margin>
                         <Insets bottom="6.0" />
                      </VBox.margin>
                   </Text>
-                  <Text fx:id="txtGender" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
+                  <Text fx:id="txtGender" strokeType="OUTSIDE" strokeWidth="0.0" text="Text" wrappingWidth="152.5367202758789" />
                </children>
             </VBox>
-            <ImageView fx:id="userPng" fitHeight="150.0" fitWidth="76.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/person.png" />
-               </image>
-            </ImageView>
+            <ImageView fx:id="imgDP" fitHeight="115.0" fitWidth="88.0" pickOnBounds="true" preserveRatio="true" />
          </children>
       </HBox>
       <HBox fx:id="portalComplaint" layoutX="258.0" layoutY="258.0" prefHeight="100.0" prefWidth="148.0" style="-fx-border-color: black;">
@@ -79,8 +75,8 @@
       </ImageView>
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <Text fx:id="UCname" layoutX="115.0" layoutY="57.0" scaleX="2.0" scaleY="2.0" strokeType="OUTSIDE" strokeWidth="0.0" wrappingWidth="102.36328125" />
-      <Button fx:id="btnPersonalInfo" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" text="Add Personal Info" />
-      <Button layoutX="154.0" layoutY="360.0" mnemonicParsing="false" text="View Personal Info" />
+      <Button fx:id="btnPersonalAdd" layoutX="22.0" layoutY="360.0" mnemonicParsing="false" text="Add Personal Info" />
+      <Button fx:id="btnPersonalView" layoutX="154.0" layoutY="360.0" mnemonicParsing="false" text="View Personal Info" />
    </children>
    <effect>
       <ColorAdjust hue="0.11" />

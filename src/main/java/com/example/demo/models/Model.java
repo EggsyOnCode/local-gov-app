@@ -3,6 +3,9 @@ package com.example.demo.models;
 import com.example.demo.views.ViewFactory;
 import com.mongodb.client.*;
 import org.bson.Document;
+import org.bson.conversions.Bson;
+
+import static com.mongodb.client.model.Filters.eq;
 
 //making a singleton class
 public class Model {
@@ -73,4 +76,69 @@ public class Model {
         return userDoc.getString(attribute);
 
     }
+    public void getUserData(String id) throws InterruptedException {
+        MongoDatabase database = client.getDatabase("local-gov");
+        MongoCollection<Document> collection = database.getCollection("residents");
+        Document query = new Document("id",id);
+        FindIterable<Document> results = collection.find(query);
+        Document userDoc = results.first();
+        Resident.getInstance().setfName(userDoc.getString("name"));
+        Resident.getInstance().setGender(userDoc.getString("Gender"));
+        Resident.getInstance().setAddress(userDoc.getString("Address"));
+        Resident.getInstance().setPhone(userDoc.getString("Phone Number"));
+        Resident.getInstance().setProfession(userDoc.getString("Profession"));
+        Resident.getInstance().setCnic(userDoc.getString("cnic"));
+        Resident.getInstance().setUc(userDoc.getString("uc"));
+        Resident.getInstance().setPeriod_of_residence(userDoc.getString("period of residence"));
+        Resident.getInstance().setFam_mem(userDoc.getString("family mem"));
+        Resident.getInstance().setUsername(userDoc.getString("id"));
+        Resident.getInstance().setPassword(userDoc.getString("password"));
+
+    }
+
+    public void updateDB(String id, String gender, String prof, String phone, String email, String org, String marital_status,  String fam_details, String social,String address){
+        MongoDatabase database = client.getDatabase("local-gov");
+        MongoCollection<Document> collection = database.getCollection("residents");
+        Bson filter = eq("id",id);
+
+        Document newFields = new Document();
+        newFields.append("Gender", gender);
+        Resident.getInstance().setGender(gender);
+        newFields.append("Profession", prof);
+        Resident.getInstance().setProfession(prof);
+        newFields.append("Phone Number", phone);
+        Resident.getInstance().setPhone(phone);
+        newFields.append("Address", address);
+        Resident.getInstance().setAddress(address);
+        newFields.append("Email", email);
+        newFields.append("Organization", org);
+        newFields.append("Marital Status", marital_status);
+        newFields.append("Social Work", social);
+        newFields.append("Family Details", fam_details);
+
+
+        // Create an update operation using the $set operator
+        Bson update = new Document("$set", newFields);
+
+
+        // Perform the update operation
+        collection.updateOne(filter, update);
+        System.out.println("data added");
+
+        // Close the MongoClient
+        client.close();
+    }
+
+    public void addImgtoDB(String id, byte[] imageData){
+        MongoDatabase database = client.getDatabase("local-gov");
+        MongoCollection<Document> collection = database.getCollection("residents");
+        Bson filter = eq("id",id);
+        Document newFields = new Document();
+        newFields.append("Profile Pic", imageData);
+        Bson update = new Document("$set", newFields);
+        collection.updateOne(filter, update);
+        System.out.println("img added");
+        client.close();
+    }
+
 }

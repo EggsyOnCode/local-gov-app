@@ -14,7 +14,8 @@ public class App extends Application {
     @Override
     public void start(Stage stage) throws Exception {
 //        ClientController clientUI = new ClientController(stage);
-        Model.getInstance().getViewFactory().getSignUp();
+        Model.getInstance().getViewFactory().getLoginPage();
+//        Model.getInstance().getDataofId("faizi", "Organization");
 //        Model.getInstance().authenticate("faizi","123");
 
 //        MainServer server = new MainServer();

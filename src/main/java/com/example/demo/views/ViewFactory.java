@@ -51,6 +51,12 @@ public class ViewFactory {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/client.fxml"));
         createStage(loader);
     }
+
+    public void getPersonalInfo() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/personal.fxml"));
+        createStage(loader);
+    }
+
     private void createStage(FXMLLoader loader) throws IOException {
         Scene scene = null;
         try{

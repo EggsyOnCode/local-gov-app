@@ -24,14 +24,20 @@ public class LoginController implements Initializable {
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        btnLogin.setOnAction(actionEvent -> loginToDashboard());
+        btnLogin.setOnAction(actionEvent -> {
+            try {
+                loginToDashboard();
+            } catch (InterruptedException e) {
+                throw new RuntimeException(e);
+            }
+        });
         btnToRegister.setOnAction(actionEvent -> loginToRegister());
 
 
 
     }
 
-    private void loginToDashboard(){
+    private void loginToDashboard() throws InterruptedException {
         boolean result;
         temp_pswd = loginpswd.getText();
         System.out.println(temp_pswd);
@@ -45,9 +51,13 @@ public class LoginController implements Initializable {
 //            throw new RuntimeException(e);
 //        }
         if(result==true){
+            Model.getInstance().getUserData(temp_id);
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             Model.getInstance().getViewFactory().closeStage(stage);
             Model.getInstance().getViewFactory().openDashboard();
+            System.out.println(Resident.getInstance().getfName());
+            System.out.println(Resident.getInstance().getGender());
+
         }
         else{
             Notifications.create()
