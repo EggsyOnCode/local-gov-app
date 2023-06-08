@@ -57,6 +57,16 @@ public class ViewFactory {
         createStage(loader);
     }
 
+    public void getComplaint() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/complaint.fxml"));
+        createStage(loader);
+    }
+
+    public void getComplaintDesc() throws IOException {
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("/fxml/complaint_desc.fxml"));
+        createStage(loader);
+    }
+
     private void createStage(FXMLLoader loader) throws IOException {
         Scene scene = null;
         try{
