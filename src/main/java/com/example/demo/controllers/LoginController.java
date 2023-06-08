@@ -51,6 +51,7 @@ public class LoginController implements Initializable {
 //            throw new RuntimeException(e);
 //        }
         if(result==true){
+
             Model.getInstance().getUserData(temp_id);
             Stage stage = (Stage) btnLogin.getScene().getWindow();
             Model.getInstance().getViewFactory().closeStage(stage);

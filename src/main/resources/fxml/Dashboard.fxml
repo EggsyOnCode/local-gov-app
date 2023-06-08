@@ -44,16 +44,12 @@
          </children>
       </HBox>
       <HBox fx:id="portalComplaint" layoutX="258.0" layoutY="258.0" prefHeight="100.0" prefWidth="148.0" style="-fx-border-color: black;">
-         <children>
-            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="File a Complaint" textAlignment="CENTER">
-               <font>
-                  <Font size="20.0" />
-               </font>
-            </Text>
-         </children>
          <padding>
             <Insets right="12.0" />
          </padding>
+         <children>
+            <Button fx:id="complaint_button" mnemonicParsing="false" prefHeight="26.0" prefWidth="163.0" text="File a Complaint" />
+         </children>
       </HBox>
       <HBox fx:id="portalForum" layoutX="422.0" layoutY="258.0" prefHeight="100.0" prefWidth="196.0" style="-fx-border-color: black;">
          <padding>

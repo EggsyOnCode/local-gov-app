@@ -17,6 +17,7 @@ import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
 
+
 public class DashboardController implements Initializable {
 
 
@@ -28,6 +29,9 @@ public class DashboardController implements Initializable {
     public Text txtPhone;
     public Text txtGender;
     public Text UCname;
+
+    public Button complaint_button;
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -46,6 +50,14 @@ public class DashboardController implements Initializable {
                 txtPhone.setText(Resident.getInstance().getPhone());
                 txtProfession.setText(Resident.getInstance().getProfession());
                 UCname.setText(Resident.getInstance().getUc());
+
+                complaint_button.setOnAction(actionEvent -> {
+                    try {
+                        toComplaint();
+                    } catch (IOException e) {
+                        throw new RuntimeException(e);
+                    }
+                });
 //                try {
 //                    imgDP.setImage(convertByteArrayToImage(Resident.getInstance().getProfilePic()));
 //                } catch (IOException e) {
@@ -56,9 +68,18 @@ public class DashboardController implements Initializable {
 
     }
 
-    private void toPersonalInfo() throws IOException {
-        Model.getInstance().getViewFactory().getPersonalInfo();
+    private void toComplaint() throws IOException{
+
+        Model.getInstance().getViewFactory().getComplaint();
+
     }
+
+    public void toPersonalInfo() throws IOException {
+        Model.getInstance().getViewFactory().getPersonalInfo();
+
+    }
+
+
 
     //method to check if a property has already been set; if yes binding it to the text views; otherwise proompting the user to set it
     private boolean checkViews(){
@@ -91,4 +112,8 @@ public class DashboardController implements Initializable {
 
         return writableImage;
     }
+
+
+
+
 }
